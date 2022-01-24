@@ -2,11 +2,11 @@ import scala.collection.mutable
 import scala.math.Numeric.IntIsIntegral
 
 /**
- * An EquivalenceChecker is an object that allows to detect some notion of equivalence between formulas
- * and equality between terms.
- * This allows the proof checker and writer to avoid having to deal with a class of "easy" equivalence.
+ * An EquivalenceChecker is an object that allows to detect equivalence between formulas in the
+ * theory of Orthocomplemented Bisemilattices.
+ * This allows proof checkers and writers to avoid having to deal with a class of "easy" equivalence.
  * For example, by considering "x ∨ y" as being the same formula as "y ∨ x", we can avoid frustrating errors.
- * For soundness, this relation should always be a subrelation of the usual FOL implication.
+ * This relation is always a subrelation of the usual FOL implication.
  */
 object EquivalenceChecker {
     sealed abstract class SimpleFormula {
