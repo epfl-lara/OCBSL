@@ -65,11 +65,12 @@ object EquivalenceChecker {
                 else if (c1 == c2) return true
                 else j+=1
             }
+            val children_codes = children.map(c => c._2).toSet
             var k = 0
             while(k<negatives.size){
                 negatives(k) match {
                     case NOr(gdChildren, c) =>
-                        if (gdChildren.forall(sf => children.exists(c => c._2 == sf.code))) return true
+                        if (gdChildren.forall(sf => children_codes.contains(sf.code))) return true
                     case _ => ()
                 }
                 k+=1
